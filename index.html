@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AHPANDIGI - PAN Card Services</title>
+<meta name="description" content="AHPANDIGI - PAN card application assistance and digital services.">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033}
+header{background:#0b57d0;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:5}
+.logo{font-size:25px;font-weight:800}.nav a{color:#fff;text-decoration:none;margin-left:20px}
+.hero{padding:70px 6%;background:linear-gradient(135deg,#0b57d0,#4f8cff);color:white;text-align:center}
+.hero h1{font-size:42px;margin:0 0 14px}.hero p{font-size:18px;max-width:700px;margin:0 auto 28px;line-height:1.6}
+.btn{display:inline-block;background:#fff;color:#0b57d0;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:700}
+section{padding:45px 6%;max-width:1150px;margin:auto}h2{text-align:center;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 5px 20px #17203312}.card h3{margin-top:0}
+.form{max-width:650px;margin:auto;background:#fff;padding:25px;border-radius:14px;box-shadow:0 5px 20px #17203312}
+input,select,textarea{width:100%;padding:13px;margin:8px 0 15px;border:1px solid #d5dbe7;border-radius:7px}
+button{border:0;background:#0b57d0;color:#fff;padding:13px 22px;border-radius:8px;font-weight:700;cursor:pointer;width:100%}
+.notice{font-size:13px;color:#687386;line-height:1.5}
+footer{background:#111827;color:#d7dce5;text-align:center;padding:28px 6%;margin-top:30px}
+@media(max-width:600px){.hero h1{font-size:32px}.nav a{margin-left:8px;font-size:13px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">AHPANDIGI</div>
+<div class="nav"><a href="#services">Services</a><a href="#apply">Apply</a><a href="#contact">Contact</a></div>
+</header>
+
+<div class="hero">
+<h1>PAN Card Digital Services</h1>
+<p>Simple and convenient assistance for PAN-related applications and digital services.</p>
+<a class="btn" href="#apply">Start Application</a>
+</div>
+
+<section id="services">
+<h2>Our Services</h2>
+<div class="grid">
+<div class="card"><h3>🪪 New PAN Application</h3><p>Assistance for new PAN applications and document preparation.</p></div>
+<div class="card"><h3>🔄 PAN Correction</h3><p>Help with corrections or updates to PAN application details.</p></div>
+<div class="card"><h3>📄 Document Assistance</h3><p>Guidance on commonly required documents and application details.</p></div>
+<div class="card"><h3>💻 Digital Support</h3><p>Online assistance for digital service requests.</p></div>
+</div>
+</section>
+
+<section id="apply">
+<h2>Application Enquiry</h2>
+<div class="form">
+<form onsubmit="sendWhatsApp(event)">
+<label>Name</label><input id="name" required placeholder="Enter your name">
+<label>Mobile Number</label><input id="phone" required inputmode="numeric" placeholder="Enter mobile number">
+<label>Service</label>
+<select id="service"><option>New PAN Application</option><option>PAN Correction</option><option>Other Digital Service</option></select>
+<label>Message</label><textarea id="message" rows="4" placeholder="Write your requirement"></textarea>
+<button type="submit">Send Enquiry</button>
+<p class="notice">This form opens WhatsApp with your enquiry. Replace the demo WhatsApp number in the code with your business number before publishing.</p>
+</form>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact AHPANDIGI</h2>
+<div class="card" style="text-align:center">
+<p><b>Phone:</b> +91 9643482388</p>
+<p><b>Email:</b> hossainajad456@gmail.com</p>
+<p class="notice">AHPANDIGI is an independent digital service website. PAN is issued by the Income Tax Department of India; this website is not an official government website.</p>
+</div>
+</section>
+
+<footer>© 2026 AHPANDIGI. All rights reserved.</footer>
+
+<script>
+function sendWhatsApp(e){
+ e.preventDefault();
+ const businessNumber="919643482388";
+ const text=`AHPANDIGI Enquiry%0AName: ${encodeURIComponent(document.getElementById('name').value)}%0AMobile: ${encodeURIComponent(document.getElementById('phone').value)}%0AService: ${encodeURIComponent(document.getElementById('service').value)}%0AMessage: ${encodeURIComponent(document.getElementById('message').value)}`;
+ window.open(`https://wa.me/${businessNumber}?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
